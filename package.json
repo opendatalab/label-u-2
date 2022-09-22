@@ -1,6 +1,9 @@
 {
-  "name": "labelbee",
+  "name": "label-u",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "version": "1.7.0",
   "scripts": {
     "start": "lerna run build:type && lerna run --parallel --stream start",
@@ -9,11 +12,29 @@
     "build": "lerna run build",
     "build:type": "lerna run build:type",
     "lint": "lerna run --parallel --stream lint",
-    "clean": "lerna clean && rm -rf ./node_modules/ && rm -rf ./packages/**/node_modules && rm -rf ./packages/**/package-lock.json",
+    "clean": "lerna clean && rimraf ./packages/**/package-lock.json && rimraf ./node_modules",
     "version": "lerna version --conventional-graduate --yes",
     "publish": "lerna publish from-package --yes",
     "commit": "cz",
     "release": "standard-version"
+  },
+  "author": "wuhui",
+  "contributors": [
+    "lijingchi",
+    "tanjunbao",
+    "chenlu",
+    "lihuaqi",
+    "luoluo"
+  ],
+  "keywords": [
+    "annotation",
+    "canvas",
+    "react"
+  ],
+  "homepage": "https://github.com/opendatalab/labelU.git",
+  "bugs": {
+    "url": "https://github.com/opendatalab/labelU.git",
+    "email": "751569801@qq.com"
   },
   "main": "index.js",
   "license": "Apache-2.0",
@@ -26,15 +47,13 @@
     "lerna": "^4.0.0",
     "standard-version": "^9.3.1"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "npm run lint"
-    }
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "gauge": "^2.7.4",
+    "react-ace": "^10.1.0"
   }
 }

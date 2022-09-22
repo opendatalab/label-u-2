@@ -1,64 +1,43 @@
-<div align="center">
-  <article style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-      <p align="center"><img width="300" src="./docs/assets/logo.svg" /></p>
-      <h1 style="width: 100%; text-align: center;">LabelBee</h1>
-      <p>为标注而生，专注于标注体验的渲染、组件库。快速搭建标注应用。</p>
-  </article>
-  <a href="./README_en-US.md">English</a> | 简体中文
-
-</div>
-
 ## 特性
 
-- 即拆即用，简单配置即可创建标注应用
-- 渲染分离，可单独使用渲染模块
+- 📝本项目包含@label-u/annotation、@label-u/components、@label-u/utils及@label-u/web等4个工程。
 
+- 📝采用rollup esbuild插件及vite编译，让开发者上高速，开发效率更高
+
+- 📝采用lerna进行多工程管理。
+
+- 📝合理的代码分层：
+
+  - 📝@label-u/utils提供国际化能力。
+
+  - 📝@label-u/annotation作为工具层，主要实现标注能力的封装，此外提供AnnotationEngine用于调用标注能力。
+
+  - 📝@label-u/components实现标注能力集成，作为直接暴露在外的标注组件，使用者通过对AnnotationOperation的配置即可实现标注界面,支持多工具标注，支持标注结果可视化（目前主要是针对图片标注，视频，音频，文本和点云也在开发当中）
+
+  - 📝@label-u/web提供一个开箱即用的标注服务，基于@label-u/components暴露组件实现，支持对工具的yaml和可视化配置，并提供模板供用户参考和标注界面预览。
 
 ## 安装
 
 ```bash
 # npm
-npm install @labelbee/lb-annotation
-npm install @labelbee/lb-components
+npm install lerna -g
+npm install
+npm run bootstrap
+npm run build
+npm run start
 
-# yarn
-yarn add @labelbee/lb-annotation
-yarn add @labelbee/lb-components
 ```
 
 
 ## 使用
 
-快速开始例子
+详细文档尽请期待。
 
-```js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { AnnotationView } from '@labelbee/lb-components';
+## 致谢
 
-const src = ''; // 可访问的图片路径
 
-const DefaultComponent = () => {
-  return (
-    <AnnotationView
-     src={src}
-   />
-  )
-}
+我们在开发此款标注工具时，参考并依赖了[labelbee](https://github.com/open-mmlab/labelbee)项目，在此对labelbee的作者表示感谢。
 
-ReactDOM.render(<App />, document.querySelector('#app'));
-```
+## 许可证
 
-## 文档
-
-- [LabelBee 渲染库 - lb-Annotation](./packages/lb-annotation/README.md)
-- [LabelBee 组件库 - lb-components](./packages/lb-components/README.md)
-- [快速 DEMO 展示](./packages/lb-demo/README.md)
-
-## 友情链接
-
-- [LabelBee-Client](https://github.com/open-mmlab/labelbee-client)
-
-## LICENSE
-
-该项目使用 [Apache 2.0 license](./LICENSE).
+此项目是根据Apache 2.0许可证发布的
