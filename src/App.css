@@ -1,0 +1,122 @@
+@import '~antd/dist/antd.css';
+
+.displayFlex{
+  display:flex;
+  display:-moz-flex;
+  display:-webkit-flex;
+  display:-ms-flex;
+}
+.flexDirectionColumn{
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.flexDirectionRow{
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.App {
+  @extend .displayFlex;
+  @extend .flexDirectionColumn;
+  justify-content: center;
+  align-items: center;
+  width : 100vw;
+  height : 100vh;
+}
+.outerFrame{
+  display: inherit;
+  @extend .flexDirectionColumn;
+  flex : 1;
+  width : 1280px;
+  margin : 0px auto;
+  height : calc(100vh - 48px);
+}
+.searchRow{
+  padding-top:24px;
+  display: inherit;
+  flex : 1;
+  @extend .flexDirectionRow;
+  justify-content: flex-start;
+}
+.singleBranch{
+  /*display: inherit;*/
+  flex : 1;
+  /*@extend .flexDirectionColumn;*/
+}
+
+.son{
+  flex : 1;
+}
+.parent{
+  /*flex : 1;*/
+  text-align: center;
+  border-radius: 5px;
+  border : 1px solid #1890ff;
+  margin : 5px;
+  height : 40px;
+  line-height: 40px;
+  position : relative;
+}
+.parent:hover{
+  cursor : pointer;
+  background-color: #1890ff;
+}
+/*.showBody{*/
+/*  flex : 1;*/
+/*  text-align: center;*/
+/*  border-radius: 5px;*/
+/*  border : 1px solid #1890ff;*/
+/*  margin : 5px;*/
+/*  height : 40px;*/
+/*  line-height: 40px;*/
+/*}*/
+/*.showBody:hover{*/
+/*  cursor : pointer;*/
+/*  background-color: #1890ff;*/
+/*}*/
+.rightCorner{
+  position : absolute;
+  right : -1px;
+  top : -15px;
+}
+.showWholeData{
+
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
